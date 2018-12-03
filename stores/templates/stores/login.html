@@ -1,0 +1,38 @@
+{% extends 'stores/base.html' %}
+    {% block title %}
+        Login Page
+    {% endblock %}
+
+    {% block body %}
+        
+
+    <div class="jumbotron">
+        <form action="{% url 'login' %}" method="post">
+                {% csrf_token %}
+                {% if message %}
+                    <div class="p-3 mb-2 bg-danger text-white">{{ message }}</div>
+                {% endif %}
+                <div class="form-group row">
+                    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Username</label>
+                    <div class="col-sm-6">
+                        <input type="text" name="username" class="form-control form-control-sm" id="colFormLabelSm" placeholder="Enter Username">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Password</label>
+                    <div class="col-sm-6">
+                        <input type="password" name="password" class="form-control form-control-sm" id="colFormLabelSm" placeholder="Password">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-danger">Submit</button>
+        </form>
+        <br>
+        <small>
+             Don't you have an account? <a href="{% url 'register' %}">Register Now</a>
+        </small>
+    </div>
+
+    {% endblock %}
+
+
+

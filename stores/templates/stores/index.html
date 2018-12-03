@@ -1,0 +1,36 @@
+{% extends 'stores/base.html' %}
+    {% block title %}
+        Home Page
+    {% endblock %}
+    
+    {% block body %}
+        <h1>Welcome to the index page</h1>
+        <h2>
+            {{ user.id }} {{ user.username }}
+        </h2>
+        <a href="{% url 'favorite' %}">Go to favorite page</a>
+        <a href="{% url 'logout' %}">logout</a>
+        <ul>
+            {% for store in stores %}
+                <li> {{ store }} </li> <a href="store_id={{ store.id }}">Add to Favorite</a>
+            {% endfor %}
+
+        </ul>
+        <div class="pagination">
+                <span class="step-links">
+                    {% if stores.has_previous %}
+                        <a href="?page=1">&laquo; first</a>
+                        <a href="?page={{ stores.previous_page_number }}">previous</a>
+                    {% endif %}
+            
+                    <span class="current">
+                        Page {{ stores.number }} of {{ stores.paginator.num_pages }}.
+                    </span>
+            
+                    {% if stores.has_next %}
+                        <a href="?page={{ stores.next_page_number }}">next</a>
+                        <a href="?page={{ stores.paginator.num_pages }}">last &raquo;</a>
+                    {% endif %}
+                </span>
+            </div>
+    {% endblock %}
