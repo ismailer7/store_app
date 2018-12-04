@@ -12,7 +12,7 @@ def index(request):
     if request.user.is_authenticated:
         current_user = User.objects.get(pk=request.user.id)
         all_stores = current_user.stores.all()
-        paginator = Paginator(all_stores, 30)
+        paginator = Paginator(all_stores, 36)
         page = request.GET.get('page')
         stores = paginator.get_page(page)
         return render(request, 'stores/index.html', {'stores' : stores})

@@ -1,12 +1,10 @@
-{% extends 'stores/base.html' %}
+{% extends 'stores/baseNoNav.html' %}
     {% block title %}
         Login Page
     {% endblock %}
-
-    {% block body %}
         
 
-    <div class="jumbotron">
+    {% block body %}
         <form action="{% url 'login' %}" method="post">
                 {% csrf_token %}
                 {% if message %}
@@ -30,8 +28,6 @@
         <small>
              Don't you have an account? <a href="{% url 'register' %}">Register Now</a>
         </small>
-    </div>
-
     {% endblock %}
 
 
