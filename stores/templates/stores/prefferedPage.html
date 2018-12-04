@@ -4,16 +4,31 @@
         Preffered Page
     {% endblock %}
 
-    {% block body %}
+   
 
+    {% block top %}
         <h1>Preffered Stores List</h1>
-        {% for pstore in pstores %}
-            <li>
-                {{ pstore }}
-            </li>
-        {% endfor %}
+    {% endblock %}
+   
+    {% block body %}
+        <div class="container">
+        <div class="row">
+                {% for pstore in pstores %}
+                <div class="col-4">
+                    <div class="card border-dark mb-3" style="max-width: 20rem;">
+                            <div class="card-header">{{ pstore.id }}</div>
+                            <div class="card-body">
+                              <h6 class="card-title">Store {{ pstore.name }}</h6>
+                              <p class="card-text">Distance -> {{ pstore.distance }}</p>
+                              <small><a href="store_id={{ store.id }}">Remove</a></small>
+                            </div>
+                    </div>
+                </div> 
+            {% endfor %}    
+        </div>
         
-        <div class="pagination">
+        <div class="pagination" style="display:table;margin-right: auto;
+        margin-left: auto;">
                 <span class="step-links">
                     {% if pstores.has_previous %}
                         <a href="?page=1">&laquo; first</a>
@@ -31,5 +46,5 @@
                 </span>
             </div>
             <a href="{% url 'index' %}">Back to the main page</a>
-
+        </div>
     {% endblock %}
