@@ -10,6 +10,6 @@ class Store(models.Model):
     is_preffered = models.BooleanField(default=False)
     is_blocked = models.BooleanField(default=False)
     date = models.DateTimeField(default=datetime.datetime.now)
-
+    
     def __str__(self):
         return '{0} store away by {1} meters'.format(self.name, self.distance, self.is_preffered, self.date)

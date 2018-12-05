@@ -83,3 +83,9 @@ def remove_from_favorites(request, store_id):
     store.is_preffered = False
     store.save()
     return HttpResponseRedirect(reverse('favorite'))
+
+def dislike_store(request, store_id):
+    store = Store.objects.get(pk=store_id)
+    store.is_blocked = True
+    store.save()
+    return HttpResponseRedirect(reverse('index'))
