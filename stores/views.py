@@ -78,3 +78,8 @@ def favorites(request):
     stores = paginator.get_page(page)
     return render(request, 'stores/prefferedPage.html', {'pstores' : stores})
 
+def remove_from_favorites(request, store_id):
+    store = Store.objects.get(pk=store_id)
+    store.is_preffered = False
+    store.save()
+    return HttpResponseRedirect(reverse('favorite'))

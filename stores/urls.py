@@ -9,5 +9,6 @@ urlpatterns = [
     path('logout/', views.log_out, name='logout'),
     path('register/', views.register, name='register'),
     path('store_id=<int:store_id>', views.add_preffer, name='prefer'),
-    path('prefferedPage/', views.favorites, name='favorite')
+    path('prefferedPage/', views.favorites, name='favorite'),
+    path('prefferedPage/store_id=<int:store_id>', views.remove_from_favorites, name='rfavorite'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
