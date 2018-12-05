@@ -12,4 +12,4 @@ class Store(models.Model):
     date = models.DateTimeField(default=datetime.datetime.now)
 
     def __str__(self):
-        return '{0} - {1} store by {2} meters , isPreffered : {3}, time : {4}'.format(self.id, self.name, self.distance, self.is_preffered, self.date)
+        return '{0} store away by {1} meters'.format(self.name, self.distance, self.is_preffered, self.date)

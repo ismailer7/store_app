@@ -68,7 +68,7 @@ def add_preffer(request, store_id):
     store = Store.objects.get(pk=store_id)
     store.is_preffered = True
     store.save()
-    return HttpResponseRedirect(reverse('index'))
+    return HttpResponseRedirect(reverse('favorite'))
 
 def favorites(request):
     current_user = User.objects.get(pk=request.user.id)

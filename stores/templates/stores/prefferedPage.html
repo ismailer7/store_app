@@ -14,19 +14,21 @@
         <div class="container">
         <div class="row">
                 {% for pstore in pstores %}
-                <div class="col-4">
-                    <div class="card border-dark mb-3" style="max-width: 20rem;">
-                            <div class="card-header">{{ pstore.id }}</div>
+                <div class="col-md-4" style="padding:10px;">
+                    <div class="card border-dark mb-3">
+                            <div class="card-header">{{ pstore.name }}</div>
                             <div class="card-body">
-                              <h6 class="card-title">Store {{ pstore.name }}</h6>
-                              <p class="card-text">Distance -> {{ pstore.distance }}</p>
-                              <small><a href="store_id={{ pstore.id }}">Remove</a></small>
+                                    <h5 class="card-title">{{ pstore.id }}</h5>
+                                    <p class="card-text">{{ pstore }}</p>
+                                    <p class="card-text"><small class="text-muted">{{ pstore.date }}</small></p>
+                                    <small><a class="btn btn-danger btn-sm" href="store_id={{ pstore.id }}">Remove</a></small>
                             </div>
                     </div>
                 </div> 
             {% endfor %}    
         </div>
-        
+
+
         <div class="pagination" style="display:table;margin-right: auto;
         margin-left: auto;">
                 <span class="step-links">
