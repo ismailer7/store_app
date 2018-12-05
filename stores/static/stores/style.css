@@ -1,61 +1,19 @@
 body {
-    text-align: center;
-    margin-top: 200px;
-    font-size: 1.3em;
-    font-family: monospace;
-    background: #aa076b;
-    background-image: background-image: background: -webkit-linear-gradient(right, #aa076b, #61045f);
-    background-image: background-image: background: -o-linear-gradient(right, #aa076b, #61045f);
-    background-image: background-image: background: linear-gradient(to left, #aa076b, #61045f);
-    background: -o-linear-gradient(right, #aa076b, #61045f);
-    background: linear-gradient(to left, #aa076b, #61045f);
-  
-  color: white;
+    font-size: 1em;
+    background: rgb(255, 254, 254);
 }	
-h1 {
+
+h6 {
     color: #C71585;
+    text-align: center;
 }
-form {
-    display: inline-block;
-    background-color: white;
-    padding: 10px 20px;
-    margin-top: -100px;
-    box-shadow: 0px 5px 5px 5px white;
-}
-input,button {
-    padding: 15px;
-    margin: 15px;
-    width: 360px;
-    box-sizing: border-box;
-    border: 0;
-    outline: 0;
-    color: black;
-    border-radius: 5px;
-}
-button {
-    text-transform: uppercase;
-    background-color: #aa076b;
-    cursor: pointer;
-    color: white;
+
+.elm:hover, .elm:active, .elm:focus{
+    background-color: #eee;
     transition: ease-in 0.3s;
 }
-button:hover, button:active, button:focus{
-    background-color: #61045f;
+
+.elm {
+    cursor: default;
     transition: ease-in 0.3s;
-}
-input {
-    background-color: #ddd;
-    border: 0;
-    font-size: 15px;
-}
-table td {
-    width: 400px;
-}
-p {
-    color: grey;
-    font-size: 10px;
-}
-a {
-    color: #aa076b;
-    text-decoration: none;
 }

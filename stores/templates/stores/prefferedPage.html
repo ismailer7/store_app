@@ -15,12 +15,13 @@
         <div class="row">
                 {% for pstore in pstores %}
                 <div class="col-md-3" style="padding:10px;">
-                    <div class="card border-dark mb-3">
+                    <div class="card border-dark mb-3 elm">
                             <div class="card-header">{{ pstore.name }}</div>
                             <div class="card-body">
-                                    <h5 class="card-title">{{ pstore.id }}</h5>
-                                    <p class="card-text">{{ pstore }}</p>
-                                    <p class="card-text"><small class="text-muted">{{ pstore.date }}</small></p>
+                                    <h5 class="card-title"> <img src="{{ pstore.icon }}" alt="Store icon"></h5>
+                                        <p class="card-text">Category : {{ pstore.category }}</p>
+                                        <p class="card-text"> Vicinity : {{ pstore.vicinity }} </p>
+                                        <p class="card-text"><small class="text-muted">{{ pstore.date }}</small></p>
                                     <small><a class="btn btn-danger btn-sm" href="store_id={{ pstore.id }}">Remove</a></small>
                             </div>
                     </div>
@@ -47,6 +48,6 @@
                     {% endif %}
                 </span>
             </div>
-            <a href="{% url 'index' %}">Back to the main page</a>
+            <a href="{% url 'index' %}"> <<< Back to the main page</a>
         </div>
     {% endblock %}
