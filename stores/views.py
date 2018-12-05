@@ -6,12 +6,25 @@ from .models import Store
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.core.paginator import Paginator
+from datetime import datetime
+import pytz
 import geocoder, requests
 
 def index(request):
     if request.user.is_authenticated:
         current_user = User.objects.get(pk=request.user.id)
-        all_stores = current_user.stores.all()
+        # get all stores tha are blocked 
+        blocked_stores = current_user.stores.filter(is_blocked=True)
+        for bstore in blocked_stores:
+            print("date :",bstore.date)
+            hours = abs(datetime.now(tz=pytz.utc) - bstore.date).total_seconds() / 3600.0
+            print('hs :', hours)
+            # if any of the store are passed the 2h time being blocked unblock them
+            if hours >= 2:
+                bstore.is_blocked = False
+                bstore.date = datetime.now(tz=pytz.utc)
+        # then get all the store normally that are not blocked
+        all_stores = current_user.stores.filter(is_blocked=False)
         paginator = Paginator(all_stores, 36)
         page = request.GET.get('page')
         stores = paginator.get_page(page)
@@ -87,5 +100,6 @@ def remove_from_favorites(request, store_id):
 def dislike_store(request, store_id):
     store = Store.objects.get(pk=store_id)
     store.is_blocked = True
+    store.date = datetime.now(tz=pytz.utc)
     store.save()
     return HttpResponseRedirect(reverse('index'))

@@ -11,5 +11,5 @@ urlpatterns = [
     path('store_id=<int:store_id>', views.add_preffer, name='prefer'),
     path('prefferedPage/', views.favorites, name='favorite'),
     path('prefferedPage/store_id=<int:store_id>', views.remove_from_favorites, name='rfavorite'),
-    path('store_id=<int:store_id>', views.dislike_store, name='block'),
+    path('dislike/store_id=<int:store_id>', views.dislike_store, name='block'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
