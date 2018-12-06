@@ -15,16 +15,16 @@ git clone https://github.com/ninjaEater/store_app.git
 or you can fork it if you want to collaborate and add some features in the future.
 
 ### Prerequisites and Installations
-You need to install thoses in order to run the app :
-the latest version of django, you can do that by using python package manager pip.
+You need to install thoses in order to run the app
+* The latest version of django, you can do that by using python package manager pip.
 ```
 pip install django
 ```
-you need a library called geocoder this allows you to get information about the user, especially the location of the user based on there ip address.
+* You need a library called geocoder this allows you to get information about the user, especially the location of the user based on there ip address.
 ```
 pip install geocoder
 ```
-and also requests module for sending HTTP GET requests to search the stores (based on your latitude and longtitude) to retrieve all stores that are nears you.
+* requests module for sending HTTP GET requests to search the stores (based on your latitude and longtitude) to retrieve all stores that are nears you.
 ```
 pip install requests
 ```
