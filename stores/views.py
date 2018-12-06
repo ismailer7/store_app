@@ -14,7 +14,7 @@ def index(request):
     ''' This is home page view that contains all nearby shops '''
     if request.user.is_authenticated:
         current_user = User.objects.get(pk=request.user.id)
-        # get all stores tha are blocked 
+        # get all stores that are blocked 
         blocked_stores = current_user.stores.filter(is_blocked=True)
         for bstore in blocked_stores:
             hours = abs(datetime.now(tz=pytz.utc) - bstore.date).total_seconds() / 3600.0
@@ -34,7 +34,7 @@ def index(request):
 def login_v(request):
     ''' Log the user in if everything is fine '''
     if request.method == 'POST':
-        username = request.POST.get('username', False) # was a problem
+        username = request.POST.get('username', False)
         password = request.POST.get('password', False)
         user = authenticate(request, username=username, password=password)
         if user is not None:
