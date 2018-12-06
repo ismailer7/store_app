@@ -17,7 +17,7 @@
         * the latest version of django.
             you can do that by using python package manager pip.
                 ```
-                - pip install django
+                pip install django
                 ```
         * you need a library called geocoder this allows you to get information about the user, especially the location of the user based on there ip address.
                 - pip install geocoder
