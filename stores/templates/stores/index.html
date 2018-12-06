@@ -4,52 +4,50 @@
     {% endblock %}
     
     {% block top %}
-                <h1>Welcome {{user.username}}</h1>
-                <h4>store application</h4>
+        <h1>Welcome {{user.username}}</h1>
+        <h4>store application</h4>
     {% endblock %}
     
     {% block body %}
         <div class="container">
             
             <div class="row">
-                    {% for store in stores %}
-                    <div class="col-md-3" style="padding:10px;">
-                            <div class="card border-dark mb-4 elm">
-                                    <div class="card-header">{{ store.name }}</div>
-                                    <div class="card-body">
-                                      <h5 class="card-title"> <img src="{{ store.icon }}" alt="Store icon"></h5>
-                                      <p class="card-text">Category : {{ store.category }}</p>
-                                      <p class="card-text"> Vicinity : {{ store.vicinity }} </p>
-                                      <p class="card-text"><small class="text-muted">{{ store.date }}</small></p>
-                                      <p>
-                                          <small><a class="btn btn-danger btn-sm" href="dislike/store_id={{ store.id }}">Dislike</a></small>
-                                          <small><a class="btn btn-success btn-sm" href="store_id={{ store.id }}" style="float:right;">Like</a></small>
-                                      </p>
-                                    </div>
-                            </div>
+                {% for store in stores %}
+                <div class="col-md-3" style="padding:10px;">
+                    <div class="card border-dark mb-4 elm">
+                        <div class="card-header">{{ store.name }}</div>
+                        <div class="card-body">
+                            <h5 class="card-title"> <img src="{{ store.icon }}" alt="Store icon"></h5>
+                            <p class="card-text">Category : {{ store.category }}</p>
+                            <p class="card-text"> Vicinity : {{ store.vicinity }} </p>
+                            <p class="card-text"><small class="text-muted">{{ store.date }}</small></p>
+                            <p>
+                                <small><a class="btn btn-danger btn-sm" href="dislike/store_id={{ store.id }}">Dislike</a></small>
+                                <small><a class="btn btn-success btn-sm" href="store_id={{ store.id }}" style="float:right;">Like</a></small>
+                            </p>
+                        </div>
                     </div>
+                </div>
                 {% endfor %}
             </div>
-            
 
-
-        <div class="pagination" style="display:table;margin-right: auto;
-        margin-left: auto;">
-                <span class="step-links">
-                    {% if stores.has_previous %}
-                        <a href="?page=1">&laquo; first</a>
-                        <a href="?page={{ stores.previous_page_number }}">previous</a>
-                    {% endif %}
+        <div class="pagination" style="display:table;margin-right: auto;margin-left: auto;">
+            <span class="step-links">
+                {% if stores.has_previous %}
+                    <a href="?page=1">&laquo; first</a>
+                    <a href="?page={{ stores.previous_page_number }}">previous</a>
+                {% endif %}
             
-                    <span class="current">
-                        Page {{ stores.number }} of {{ stores.paginator.num_pages }}.
-                    </span>
-            
-                    {% if stores.has_next %}
-                        <a href="?page={{ stores.next_page_number }}">next</a>
-                        <a href="?page={{ stores.paginator.num_pages }}">last &raquo;</a>
-                    {% endif %}
+                <span class="current">
+                    Page {{ stores.number }} of {{ stores.paginator.num_pages }}.
                 </span>
-            </div>
+            
+                {% if stores.has_next %}
+                    <a href="?page={{ stores.next_page_number }}">next</a>
+                    <a href="?page={{ stores.paginator.num_pages }}">last &raquo;</a>
+                {% endif %}
+            </span>
         </div>
+    </div>
+    
     {% endblock %}
