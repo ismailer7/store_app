@@ -21,7 +21,7 @@
                 - pip install geocoder
         * and also requests module for sending HTTP GET requests to search the stores (based on your latitude and longtitude) to retrieve all stores that are nears you.
                 - pip install requests
-
+        * all this stuff could be gather into one single Docker image that contains all requirements files that needed in order to run this app (I will add it as soon as possible) 
 ## Author
     * Name : RZOUKI ismail
     * Email : ismailrzouki7@gmail.com
@@ -29,8 +29,9 @@
     * Tel : 0637505624
 
 ## PS's
-    * I didn't focus on front end (I used some bootstrap)
-    * I used username field instead of Email field, i will upgrade this soon
-    * you can use this to login if you are lazy (register your own to see the stores that nearby your location)
+    * I didn't focus on front end (I used some bootstrap).
+    * I used username field instead of Email field, i will upgrade this soon.
+    * you can use this to login if you are lazy (register your own to see the stores that nearby your location).
         - username : kosmos
         - password : santoryo1234   
+    * I didn't implements any tests for now (this will be in the future so we can use some CI tools).
