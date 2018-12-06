@@ -16,9 +16,9 @@
     * You need to install thoses in order to run the app :
         * the latest version of django.
             you can do that by using python package manager pip.
-                ```
-                pip install django
-                ```
+```
+Give examples
+```
         * you need a library called geocoder this allows you to get information about the user, especially the location of the user based on there ip address.
                 - pip install geocoder
         * and also requests module for sending HTTP GET requests to search the stores (based on your latitude and longtitude) to retrieve all stores that are nears you.
