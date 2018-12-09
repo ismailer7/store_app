@@ -29,7 +29,8 @@ pip install geocoder
 pip install requests
 ```
 * a REST API to send HTTP GET request to the web server in our case we used (here places api). the request url looks something like this with parameters some parameters:
-```https://places.cit.api.here.com/places/v1/browse?at=35.7226%2C-5.9357&q=shopping&size=200&Accept-Language=en-US%2Cen%3Bq%3D0.9&app_id=your_app_id_here&app_code=your_app_code_here
+```
+https://places.cit.api.here.com/places/v1/browse?at=35.7226%2C-5.9357&q=shopping&size=200&Accept-Language=en-US%2Cen%3Bq%3D0.9&app_id=your_app_id_here&app_code=your_app_code_here
 ```
 all this stuff could be gather into one single Docker image that contains all requirements files that needed in order to run this app (I will add it as soon as possible) 
 
